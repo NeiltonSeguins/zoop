@@ -14,9 +14,12 @@ const mapaEstilosLink = {
 };
 
 const Link = ({ children, variante = "padrao", ...rest }: LinkProps) => {
-  const classes = classNames({ [mapaEstilosLink[variante]]: variante });
+  const classes = classNames(
+    { [mapaEstilosLink[variante]]: variante },
+    rest.className
+  );
   return (
-    <a className={`link ${classes}`} {...rest}>
+    <a className={classes} {...rest}>
       {children}
     </a>
   );

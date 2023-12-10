@@ -1,3 +1,4 @@
+import Link from "../../../componentes/Link";
 import ProdutoDescricao from "./ProdutoDescricao";
 import ProdutoImagem from "./ProdutoImagem";
 import ProdutoPreco from "./ProdutoPreco";
@@ -12,13 +13,15 @@ const ProdutoCartao = ({
   valor,
 }: ProdutoProps) => {
   return (
-    <li className="produtos__maisProcurados--cartao">
-      <ProdutoImagem src={src} altImg={altImg} />
-      <div className="produtos__maisProcurados--informacoes">
-        <ProdutoTitulo titulo={nome} />
-        <ProdutoDescricao texto={descricao} />
-        <ProdutoPreco preco={valor} />
-      </div>
+    <li>
+      <Link href="#" className="produtos__maisProcurados--cartao">
+        <ProdutoImagem src={src} altImg={altImg} />
+        <div className="produtos__maisProcurados--informacoes">
+          <ProdutoTitulo titulo={nome} />
+          <ProdutoDescricao texto={descricao} />
+          <ProdutoPreco preco={valor} />
+        </div>
+      </Link>
     </li>
   );
 };

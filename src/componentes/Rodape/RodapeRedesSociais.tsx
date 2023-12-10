@@ -4,14 +4,17 @@ import Tipografia from "../Tipografia";
 
 const iconesRedesSociais = [
   {
+    link: "whatsapp",
     componente: <IconeWhatsapp />,
     alt: "Ícone da rede social Whatsapp",
   },
   {
+    link: "instagram",
     componente: <IconeInstagram />,
     alt: "Ícone da rede social Instagram",
   },
   {
+    link: "tiktok",
     componente: <IconeTiktok />,
     alt: "Ícone da rede social Tik Tok",
   },
@@ -33,9 +36,11 @@ const RodapeRedesSociais = () => {
       </Tipografia>
       <ul tabIndex={0} className="rodape__redes-sociais--icones">
         {iconesRedesSociais.map((icone) => (
-          <Link href="#" key={icone.alt} alt={icone.alt}>
-            {icone.componente}
-          </Link>
+          <li key={icone.alt}>
+            <Link href={"#" + icone.link} alt={icone.alt}>
+              {icone.componente}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
