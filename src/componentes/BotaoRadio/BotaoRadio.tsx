@@ -1,0 +1,36 @@
+import "./BotaoRadio.css";
+
+export interface BotaoRadioProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+  nome: string;
+  valor: string;
+  selecionado: boolean;
+  textoLegenda: string;
+  aoMudar: (evento: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const BotaoRadio = ({
+  id,
+  nome,
+  valor,
+  selecionado,
+  textoLegenda,
+  aoMudar,
+}: BotaoRadioProps) => {
+  return (
+    <label htmlFor={id} className="botao__radio--legenda">
+      <input
+        type="radio"
+        id={id}
+        name={nome}
+        value={valor}
+        checked={selecionado}
+        onChange={aoMudar}
+      />
+      <span>{textoLegenda}</span>
+    </label>
+  );
+};
+
+export default BotaoRadio;
