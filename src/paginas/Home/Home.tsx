@@ -4,6 +4,7 @@ import Inscricao from "./Inscricao";
 import SecaoHero from "./SecaoHero";
 import categorias from "../../assets/categorias.json";
 import produtos from "../../assets/produtos.json";
+import Faq from "./Faq";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Categorias categorias={categorias} />
       <Produtos produtos={produtos} />
       <Inscricao />
+      <Faq />
     </>
   );
 };
