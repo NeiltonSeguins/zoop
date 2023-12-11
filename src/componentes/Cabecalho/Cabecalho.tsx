@@ -1,53 +1,15 @@
 import Botao from "../Botao";
 import Pesquisa from "../Pesquisa";
-import MenuDropdown from "./MenuDropdown";
-import MenuDropdownTrigger from "./MenuDropdown/MenuDropdownTrigger";
-import MenuDropdownLista from "./MenuDropdown/MenuDropdownLista";
-import MenuDropdownItem from "./MenuDropdown/MenuDropdownItem";
-import Logo from "./Logo";
 import { IconeCarrinho, IconePerfil } from "../Icones";
 import "./Cabecalho.css";
-import { useState } from "react";
-
-const listaMenu = ["Sobre Nós", "Quem somos", "Nossas lojas", "Carreiras"];
+import Logo from "./Logo";
+import Menu from "./Menu";
 
 const Cabecalho = () => {
-  const [menuAberto, setMenuAberto] = useState(false);
-  const [opcaoSelecionada, setOpcaoSelecionada] = useState(0);
-
-  const toggleOpcoes = () => {
-    setMenuAberto((prev) => !prev);
-  };
-
-  const aoSelecionar = (indice: number) => {
-    setOpcaoSelecionada(indice);
-    setMenuAberto(false);
-  };
-
   return (
     <header className="cabecalho">
       <Logo />
-      <MenuDropdown>
-        <MenuDropdownTrigger
-          menuAberto={menuAberto}
-          opcaoSelecionada={listaMenu[opcaoSelecionada]}
-          toggleOpcoes={toggleOpcoes}
-        />
-        {menuAberto && (
-          <MenuDropdownLista opcaoAtiva={listaMenu[opcaoSelecionada]}>
-            {listaMenu.map((itemLista, indice) => (
-              <MenuDropdownItem
-                key={indice}
-                indice={indice}
-                opcao={itemLista}
-                estaAberta={menuAberto}
-                onSelect={aoSelecionar}
-                ariaSelecionada={opcaoSelecionada === indice}
-              />
-            ))}
-          </MenuDropdownLista>
-        )}
-      </MenuDropdown>
+      <Menu />
       <form>
         <Pesquisa />
       </form>
