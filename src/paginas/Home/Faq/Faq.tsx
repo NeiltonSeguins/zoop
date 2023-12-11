@@ -1,15 +1,14 @@
 import "./Faq.css";
-import Tipografia from "../../../componentes/Tipografia";
-import Acordeao from "../../../componentes/Acordeao";
-import AcordeaoTitulo from "../../../componentes/Acordeao/AcordeaoTitulo";
-import AcordeaoDescricao from "../../../componentes/Acordeao/AcordeaoDescricao";
-import AcordeaoConteudo from "../../../componentes/Acordeao/AcordeaoConteudo";
-import { useState } from "react";
-import faq from "../../../assets/faq.json";
+import Tipografia from "@/componentes/Tipografia";
+import Acordeao from "@/componentes/Acordeao";
+import AcordeaoTitulo from "@/componentes/Acordeao/AcordeaoTitulo";
+import AcordeaoDescricao from "@/componentes/Acordeao/AcordeaoDescricao";
+import AcordeaoConteudo from "@/componentes/Acordeao/AcordeaoConteudo";
+import faq from "@/assets/faq.json";
+import useAcordeao from "@/hooks/useAcordeao";
 
 const Faq = () => {
-  const [estaAberto, setEstaAberto] = useState(false);
-  const alternaVisibilidade = () => setEstaAberto((prev) => !prev);
+  const { aberturasPorItem, alternaVisibilidade } = useAcordeao();
 
   return (
     <section className="secao__duvidas">
@@ -20,20 +19,19 @@ const Faq = () => {
         Antes de entrar em contato, verifique se sua dúvida está respondida em
         nossa FAQ!
       </Tipografia>
-      {/* Aqui entra o Acordeao */}
       <Acordeao>
         {faq.map((duvida) => (
           <AcordeaoConteudo key={duvida.id}>
             <AcordeaoTitulo
               titulo={duvida.titulo}
-              estaAberto={estaAberto}
-              alternaVisibilidade={alternaVisibilidade}
+              estaAberto={aberturasPorItem[duvida.id] || false}
+              alternaVisibilidade={() => alternaVisibilidade(duvida.id)}
               id={duvida.id}
             />
             <AcordeaoDescricao
               id={duvida.id}
               descricao={duvida.descricao}
-              estaAberto={estaAberto}
+              estaAberto={aberturasPorItem[duvida.id] || false}
             />
           </AcordeaoConteudo>
         ))}
