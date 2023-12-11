@@ -22,7 +22,7 @@
   padding: 0.25rem;
   display: flex;
   align-items: center;
-  width: min-content;
+  width: 100%;
 }
 
 [type="radio"] + span:before {

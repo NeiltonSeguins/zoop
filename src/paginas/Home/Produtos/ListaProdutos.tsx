@@ -7,6 +7,7 @@ const ListaProdutos = ({ produtos }: ProdutosProps) => {
       {produtos.map((produto) => (
         <ProdutoCartao
           key={produto.id}
+          id={produto.id}
           src={`/imagens/produtos/${produto.src}`}
           altImg={produto.altImg}
           nome={produto.nome}
