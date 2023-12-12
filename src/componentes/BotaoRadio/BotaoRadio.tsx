@@ -19,17 +19,19 @@ const BotaoRadio = ({
   aoMudar,
 }: BotaoRadioProps) => {
   return (
-    <label htmlFor={id} className="botao__radio--legenda">
-      <input
-        type="radio"
-        id={id}
-        name={nome}
-        value={valor}
-        checked={selecionado}
-        onChange={aoMudar}
-      />
-      <span>{textoLegenda}</span>
-    </label>
+    <li>
+      <label htmlFor={id} className="botao__radio--legenda">
+        <input
+          type="radio"
+          id={id}
+          name={nome}
+          value={valor}
+          checked={selecionado}
+          onChange={aoMudar}
+        />
+        <span>{textoLegenda}</span>
+      </label>
+    </li>
   );
 };
 

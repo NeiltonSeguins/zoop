@@ -1,6 +1,6 @@
 import "./Checkbox.css";
 
-interface CheckboxProps {
+interface CheckboxProps extends React.HTMLProps<HTMLInputElement> {
   legenda: string;
   id: string;
   nome: string;

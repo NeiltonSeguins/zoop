@@ -17,7 +17,7 @@ const Opcoes = () => {
 
   return (
     <div className="pagina__produto--opcoes">
-      <BotaoRadioGrupo>
+      <BotaoRadioGrupo ariaLabel="Grupo opções de Cor">
         {opcoes.map((opcao) => {
           return (
             <BotaoRadio
