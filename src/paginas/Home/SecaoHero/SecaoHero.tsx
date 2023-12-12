@@ -13,6 +13,7 @@ const SecaoHero = () => {
     <section className="secao__hero">
       {abrirModal && (
         <Modal
+          ariaLabel="Pegue o cupom da Zoop"
           estaAberta={abrirModal}
           fecharModal={() => setAbrirModal(false)}
         />

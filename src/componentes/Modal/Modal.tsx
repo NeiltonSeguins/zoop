@@ -5,10 +5,11 @@ import ModalConteudo from "./ModalConteudo";
 
 interface ModalProps extends React.HTMLProps<HTMLDialogElement> {
   estaAberta: boolean;
+  ariaLabel: string;
   fecharModal: () => void;
 }
 
-const Modal = ({ fecharModal, estaAberta, ...rest }: ModalProps) => {
+const Modal = ({ fecharModal, estaAberta, ariaLabel, ...rest }: ModalProps) => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const escutadorTecla = useCallback(
@@ -45,6 +46,7 @@ const Modal = ({ fecharModal, estaAberta, ...rest }: ModalProps) => {
       <div className="modal__overlay" onClick={fecharModal} />
       <dialog
         className="modal__container"
+        aria-label={ariaLabel}
         open={estaAberta}
         onClose={fecharModal}
         aria-modal={estaAberta}

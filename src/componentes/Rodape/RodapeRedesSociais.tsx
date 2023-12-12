@@ -37,7 +37,11 @@ const RodapeRedesSociais = () => {
       <ul tabIndex={0} className="rodape__redes-sociais--icones">
         {iconesRedesSociais.map((icone) => (
           <li key={icone.alt}>
-            <Link href={"#" + icone.link} alt={icone.alt}>
+            <Link
+              href={"#" + icone.link}
+              alt={icone.alt}
+              aria-label={icone.alt}
+            >
               {icone.componente}
             </Link>
           </li>
