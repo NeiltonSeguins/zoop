@@ -8,8 +8,8 @@ const SecaoHeroDescricao = () => {
       cor="cinza"
       style={{ width: "680px" }}
     >
-      Encontre tudo que você Tipografiarecisa em um só lugar com 15% de desconto
-      na primeira compra!
+      Encontre tudo que você precisa em um só lugar com 15% de desconto na
+      primeira compra!
     </Tipografia>
   );
 };

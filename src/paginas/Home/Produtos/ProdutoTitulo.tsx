@@ -9,7 +9,6 @@ const ProdutoTitulo = ({ titulo }: ProdutoTituloProps) => {
     <Tipografia
       elemento="h3"
       variante="corpo"
-      tabIndex={0}
       cor="azul"
       style={{ fontWeight: "700", fontSize: "1.125rem" }}
     >

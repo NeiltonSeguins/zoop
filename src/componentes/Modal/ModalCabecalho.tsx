@@ -11,8 +11,8 @@ const ModalCabecalho = ({ children, aoFechar }: ModalCabecalhoProps) => {
       {children}
       <Botao
         onClick={aoFechar}
-        aria-label="Botão fechar modal"
-        title="Botão fechar modal"
+        aria-label="fechar modal"
+        title="fechar modal"
         style={{ float: "right", fontWeight: "bold" }}
       >
         X
